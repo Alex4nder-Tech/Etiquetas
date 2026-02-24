@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Generador Profesional</title>
+<style>
+body { font-family: Arial; padding:20px; background:#f4f4f4; }
+.container { background:white; padding:20px; border-radius:10px; max-width:600px; margin:auto; }
+input, select { width:100%; padding:8px; margin:6px 0; }
+button { padding:10px; margin-top:5px; cursor:pointer; }
+.resultado { margin-top:15px; font-weight:bold; background:#eee; padding:10px; word-break: break-all; }
+
+@media print {
+  body * { visibility:hidden; }
+  .print-area, .print-area * { visibility:visible; }
+  .print-area { position:absolute; top:40%; left:10%; font-size:16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h2>Generador Profesional Online</h2>
+
+<label>Categoría</label>
+<select id="categoria" onchange="cargarTipos()">
+<option value="campo">Trabajo Campo</option>
+<option value="edificacion">Edificación</option>
+</select>
+
+<label>Zona</label>
+<select id="zona">
+<option value="TN">TN</option>
+<option value="MD">MD</option>
+</select>
+
+<label>Tipo</label>
+<select id="tipo"></select>
+
+<input id="tarea" placeholder="Número de tarea">
+<input id="spliter" placeholder="Spliter">
+<input id="tecnico" placeholder="Técnico">
+
+<button onclick="generar()">Generar Etiqueta</button>
+
+<div class="resultado print-area" id="resultado"></div>
+
+<button onclick="window.print()">Imprimir Etiqueta</button>
+
+</div>
+
+<script>
+
+function cargarTipos(){
+let categoria = document.getElementById("categoria").value;
+let tipo = document.getElementById("tipo");
+tipo.innerHTML = "";
+
+let opciones = [];
+
+if(categoria === "campo"){
+opciones = ["SATURACION","COBERTURA","MIGRACION","REINGENIERIA"];
+}else{
+opciones = ["SPLITTER_INICIAL","SPLITTER_ADICIONAL"];
+}
+
+opciones.forEach(o=>{
+let op = document.createElement("option");
+op.value = o;
+op.text = o;
+tipo.appendChild(op);
+});
+}
+
+function generar(){
+let categoria = document.getElementById("categoria").value;
+let zona = document.getElementById("zona").value;
+let tipo = document.getElementById("tipo").value;
+let tarea = document.getElementById("tarea").value;
+let spliter = document.getElementById("spliter").value;
+let tecnico = document.getElementById("tecnico").value;
+
+let etiqueta = "";
+
+if(categoria === "campo"){
+etiqueta = `${tipo}_${zona}-ZONA_ABIERTA-TAREA_${tarea}:${spliter}-${tecnico}`;
+}else{
+etiqueta = `EDIFICACION_${zona}-${tipo}-TAREA_${tarea}:${spliter}-${tecnico}`;
+}
+
+document.getElementById("resultado").innerText = etiqueta;
+}
+
+cargarTipos();
+
+</script>
+
+</body>
+</html>
