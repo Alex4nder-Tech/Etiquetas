@@ -1,434 +1,580 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
-<title>Generador Etiquetas</title>
+
+<title>KALZ GIS TOOL</title>
+
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
 
-body {
 
-  font-family: 'Orbitron', sans-serif;
+*{
+box-sizing:border-box;
+}
 
-  padding:20px;
 
-  background:
-  radial-gradient(circle at top left, #00f0ff22, transparent 30%),
-  radial-gradient(circle at bottom right, #0066ff33, transparent 30%),
-  linear-gradient(135deg, #050816, #0a1224, #111827);
+body{
 
-  min-height:100vh;
+margin:0;
 
-  color:white;
+padding:25px;
+
+min-height:100vh;
+
+font-family:'Rajdhani',sans-serif;
+
+background:#090909;
+
+color:white;
 
 }
+
+
 
 /* CONTENEDOR */
 
-.container {
+.container{
 
-  background: rgba(15, 23, 42, 0.75);
+max-width:1400px;
 
-  backdrop-filter: blur(12px);
+margin:auto;
 
-  border:1px solid rgba(0,255,255,0.2);
+background:#151515;
 
-  padding:30px;
+padding:30px;
 
-  border-radius:20px;
+border-radius:20px;
 
-  max-width:1400px;
+border:1px solid #333;
 
-  margin:auto;
-
-  box-shadow:
-  0 0 25px rgba(0,255,255,0.15),
-  0 0 60px rgba(0,150,255,0.15);
+box-shadow:
+0 20px 50px #000;
 
 }
+
+
+
 
 /* HEADER */
 
-.header {
+.header{
 
-  display:flex;
+display:flex;
 
-  align-items:center;
+align-items:center;
 
-  justify-content:center;
+justify-content:center;
 
-  gap:18px;
+gap:20px;
 
-  margin-bottom:30px;
-
-}
-
-.header img {
-
-  width:75px;
-
-  height:75px;
-
-  border-radius:14px;
-
-  box-shadow:
-  0 0 15px #00d9ff,
-  0 0 30px #0088ff;
+margin-bottom:35px;
 
 }
 
-.header h2 {
 
-  margin:0;
 
-  font-size:34px;
+.header img{
 
-  color:#00e5ff;
+width:95px;
 
-  text-shadow:
-  0 0 10px #00e5ff,
-  0 0 20px #0088ff;
+height:95px;
 
-}
+object-fit:cover;
 
-/* SUBTITULO */
+border-radius:18px;
 
-.subtitulo {
+border:2px solid #ff8800;
 
-  text-align:left;
-
-  margin-top:5px;
-
-  color:#67e8f9;
-
-  font-size:14px;
-
-  letter-spacing:2px;
+box-shadow:
+0 0 20px #ff8800;
 
 }
 
-/* GRID PRINCIPAL */
 
-.main-grid {
 
-  display:grid;
 
-  grid-template-columns: 1fr 1fr;
+.header h2{
 
-  gap:30px;
+margin:0;
 
-}
+font-size:38px;
 
-/* PANEL */
+color:#ff8800;
 
-.panel {
-
-  background: rgba(255,255,255,0.03);
-
-  border:1px solid rgba(0,255,255,0.1);
-
-  border-radius:18px;
-
-  padding:20px;
-
-  box-shadow:
-  inset 0 0 15px rgba(0,255,255,0.05);
+text-shadow:
+0 0 15px #ff8800;
 
 }
 
-/* LABELS */
 
-label, h3 {
 
-  color:#7dd3fc;
+.subtitulo{
 
-  font-size:14px;
+color:#aaa;
 
-  letter-spacing:1px;
+letter-spacing:3px;
 
-}
-
-/* INPUTS */
-
-input, select {
-
-  width:100%;
-
-  padding:14px;
-
-  margin:10px 0;
-
-  border-radius:12px;
-
-  border:1px solid rgba(0,255,255,0.2);
-
-  background: rgba(255,255,255,0.05);
-
-  color:white;
-
-  font-size:14px;
-
-  box-sizing:border-box;
-
-  outline:none;
-
-  transition:0.3s;
-
-  appearance:none;
+font-size:18px;
 
 }
 
-/* OPCIONES DEL SELECT */
 
-select option {
 
-  background:#0f172a;
 
-  color:#ffffff;
 
-}
+/* GRID */
 
-/* PLACEHOLDER */
+.main-grid{
 
-input::placeholder {
+display:grid;
 
-  color:#94a3b8;
+grid-template-columns:1fr 1fr;
+
+gap:25px;
 
 }
 
-/* INPUT FOCUS */
+
+
+
+
+.panel{
+
+background:#1c1c1c;
+
+padding:25px;
+
+border-radius:18px;
+
+border:1px solid #292929;
+
+box-shadow:
+inset 0 0 20px #000;
+
+}
+
+
+
+
+
+h3,label{
+
+color:#ff8800;
+
+font-weight:700;
+
+}
+
+
+
+
+
+
+input,select{
+
+
+width:100%;
+
+padding:14px;
+
+margin:10px 0;
+
+background:#252525;
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+font-size:15px;
+
+
+}
+
+
 
 input:focus,
-select:focus {
+select:focus{
 
-  border:1px solid #00e5ff;
 
-  box-shadow:
-  0 0 10px #00e5ff;
+outline:none;
 
-}
-
-/* BOTONES */
-
-button {
-
-  width:100%;
-
-  padding:14px;
-
-  margin-top:12px;
-
-  border:none;
-
-  border-radius:12px;
-
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-
-  color:white;
-
-  font-weight:bold;
-
-  font-size:14px;
-
-  cursor:pointer;
-
-  transition:0.3s;
-
-  box-shadow:
-  0 0 12px rgba(0,198,255,0.5);
+box-shadow:
+0 0 0 2px #ff8800;
 
 }
 
-/* HOVER BOTON */
 
-button:hover {
 
-  transform:translateY(-2px);
+select option{
 
-  box-shadow:
-  0 0 18px #00e5ff,
-  0 0 35px #0072ff;
+background:#252525;
 
 }
 
-/* RESULTADOS */
 
-.resultado {
 
-  margin-top:18px;
 
-  font-weight:bold;
 
-  background: rgba(0,0,0,0.4);
 
-  padding:15px;
 
-  border-radius:12px;
+button{
 
-  word-break: break-all;
 
-  border-left:4px solid #00e5ff;
+width:100%;
 
-  color:#67e8f9;
+padding:15px;
 
-  box-shadow:
-  inset 0 0 12px rgba(0,255,255,0.1);
+margin-top:12px;
 
-}
+border:none;
 
-/* HIDDEN */
+border-radius:12px;
 
-.hidden {
 
-  display:none;
+background:#ff8800;
 
-}
 
-/* RESPONSIVE */
+color:#000;
 
-@media(max-width: 900px){
+font-weight:bold;
 
-.main-grid {
+font-size:16px;
 
-  grid-template-columns:1fr;
+cursor:pointer;
+
+
+transition:.3s;
 
 }
 
-}
 
-/* PRINT */
 
-@media print {
+button:hover{
 
-  body * {
+background:#ffaa33;
 
-    visibility:hidden;
-
-  }
-
-  .print-area,
-  .print-area * {
-
-    visibility:visible;
-
-  }
-
-  .print-area {
-
-    position:absolute;
-
-    top:40%;
-
-    left:10%;
-
-    font-size:16px;
-
-    color:black;
-
-  }
+transform:translateY(-2px);
 
 }
+
+
+
+
+
+
+.resultado{
+
+
+margin-top:15px;
+
+padding:18px;
+
+
+background:#101010;
+
+
+border-radius:12px;
+
+
+border-left:5px solid #ff8800;
+
+
+color:#ff8800;
+
+
+word-break:break-all;
+
+
+}
+
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+.main-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+
+
+
+@media print{
+
+
+body *{
+
+visibility:hidden;
+
+}
+
+
+.print-area,
+.print-area *{
+
+visibility:visible;
+
+}
+
+
+
+.print-area{
+
+position:absolute;
+
+top:40%;
+
+left:10%;
+
+color:black;
+
+}
+
+
+
+}
+
 
 </style>
+
+
 </head>
 
 <body>
 
+
+
+
 <div class="container">
 
-<!-- HEADER -->
+
+
+
 
 <div class="header">
 
-  <img src="logo.png" alt="Logo">
 
-  <div>
+<img src="logo.png">
 
-    <h2>Generador Etiquetas</h2>
 
-    <div class="subtitulo">
-      by: KALZ
-    </div>
 
-  </div>
+<div>
+
+
+<h2>
+
+KALZ GIS TOOL
+
+</h2>
+
+
+<div class="subtitulo">
+
+Generador Etiquetas<br>
+
+by: KALZ
 
 </div>
 
-<!-- GRID -->
+
+</div>
+
+
+</div>
+
+
+
+
+
+
 
 <div class="main-grid">
 
-<!-- PANEL IZQUIERDO -->
+
+
+
+
+
+
 
 <div class="panel">
 
-<h3>GENERADOR DE ETIQUETAS</h3>
 
-<!-- CATEGORIA -->
+<h3>
+
+GENERADOR DE ETIQUETAS
+
+</h3>
+
+
+
+
 
 <label>Categoría</label>
 
+
 <select id="categoria"
-onchange="cargarTipos(); actualizarFinalizacion()">
+onchange="cargarTipos();actualizarFinalizacion()">
 
-<option value="campo">Trabajo Campo</option>
 
-<option value="edificacion">Edificación</option>
 
-<option value="clientes">CLIENTES</option>
+<option value="campo">
+
+Trabajo Campo
+
+</option>
+
+
+
+<option value="edificacion">
+
+Edificación
+
+</option>
+
+
+
+<option value="clientes">
+
+CLIENTES
+
+</option>
+
 
 </select>
 
-<!-- ZONA -->
+
+
+
+
 
 <label>Zona</label>
 
+
 <select id="zona">
 
-<option value="TN">TN</option>
 
-<option value="MD">MD</option>
+<option value="TN">
+
+TN
+
+</option>
+
+
+<option value="MD">
+
+MD
+
+</option>
+
 
 </select>
 
-<!-- TIPO -->
+
+
+
+
 
 <label>Tipo</label>
 
-<select id="tipo"></select>
 
-<!-- INPUTS -->
+<select id="tipo">
 
-<input id="tarea" placeholder="Número de tarea">
+</select>
 
-<input id="spliter" placeholder="Spliter">
 
-<input id="tecnico" placeholder="Técnico">
 
-<!-- LIBERACION -->
+
+
+
+<input id="tarea"
+placeholder="Número tarea">
+
+
+
+
+
+<input id="spliter"
+placeholder="Spliter">
+
+
+
+
+
+<input id="tecnico"
+placeholder="Técnico">
+
+
+
+
+
+
+
 
 <div id="liberacionBox" class="hidden">
 
+
+
 <label>TAREA LIBERACION</label>
+
 
 <select id="modoLiberacion"
 onchange="mostrarInputLiberacion()">
 
-<option value="NA">N/A</option>
 
-<option value="numero">Ingresar número</option>
+
+<option value="NA">
+
+N/A
+
+</option>
+
+
+
+<option value="numero">
+
+Ingresar número
+
+</option>
+
 
 </select>
 
+
+
+
 <input id="numeroLiberacion"
 class="hidden"
-placeholder="Número TAREA LIBERACION">
+placeholder="Número liberación">
+
 
 </div>
 
-<!-- BOTON -->
+
+
+
+
 
 <button onclick="generar()">
 
@@ -436,293 +582,473 @@ placeholder="Número TAREA LIBERACION">
 
 </button>
 
-<!-- RESULTADO -->
 
-<div class="resultado print-area" id="resultado"></div>
 
-<!-- IMPRIMIR -->
 
-<button onclick="window.print()">
 
-🖨 IMPRIMIR ETIQUETA
 
-</button>
+<div id="resultado"
+class="resultado print-area">
 
 </div>
 
-<!-- PANEL DERECHO -->
+
+
+
+
+<button onclick="window.print()">
+
+🖨 IMPRIMIR
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="panel">
 
-<h3>FINALIZACIÓN</h3>
+
+<h3>
+
+FINALIZACIÓN
+
+</h3>
+
+
+
+
 
 <input id="caja"
-placeholder="Nombre de caja">
+placeholder="Nombre caja">
+
+
+
+
 
 <input id="edificio"
 class="hidden"
-placeholder="Nombre de edificación">
+placeholder="Edificación">
+
+
+
+
 
 <input id="coordenadas"
 placeholder="Coordenadas">
 
+
+
+
+
 <button onclick="generarFinalizacion()">
 
-🚀 GENERAR FRASE
+
+GENERAR FRASE
+
 
 </button>
 
-<div class="resultado" id="finalizacion"></div>
+
+
+
+
+<div id="finalizacion"
+class="resultado">
 
 </div>
 
-</div>
+
+
 
 </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
 
 <script>
 
-/* CARGAR TIPOS */
 
 function cargarTipos(){
 
+
 let categoria =
 document.getElementById("categoria").value;
+
 
 let tipo =
 document.getElementById("tipo");
 
-let liberacionBox =
+
+let liberacion =
 document.getElementById("liberacionBox");
 
-tipo.innerHTML = "";
 
-let opciones = [];
+tipo.innerHTML="";
 
-if(categoria === "campo"){
 
-opciones = [
+let opciones=[];
+
+
+
+if(categoria=="campo"){
+
+
+opciones=[
+
 "SATURACION",
 "COBERTURA",
 "MIGRACION",
 "REINGENIERIA"
+
 ];
 
-liberacionBox.classList.add("hidden");
 
-}else if(categoria === "edificacion"){
+liberacion.classList.add("hidden");
 
-opciones = [
-"SPLITTER_INICIAL",
-"SPLITTER_ADICIONAL"
-];
-
-liberacionBox.classList.add("hidden");
-
-}else{
-
-opciones = [
-"SATURACION",
-"COBERTURA",
-"MIGRACION",
-"REINGENIERIA"
-];
-
-liberacionBox.classList.remove("hidden");
 
 }
 
-opciones.forEach(o=>{
 
-let op =
-document.createElement("option");
 
-op.value = o;
 
-op.text = o;
+else if(categoria=="edificacion"){
 
-tipo.appendChild(op);
+
+opciones=[
+
+"SPLITTER_INICIAL",
+"SPLITTER_ADICIONAL"
+
+];
+
+
+liberacion.classList.add("hidden");
+
+
+}
+
+
+
+else{
+
+
+opciones=[
+
+"SATURACION",
+"COBERTURA",
+"MIGRACION",
+"REINGENIERIA"
+
+];
+
+
+liberacion.classList.remove("hidden");
+
+
+}
+
+
+
+
+
+opciones.forEach(x=>{
+
+
+let o=document.createElement("option");
+
+o.value=x;
+
+o.text=x;
+
+
+tipo.appendChild(o);
+
 
 });
 
+
 }
 
-/* MOSTRAR INPUT LIBERACION */
+
+
+
+
+
 
 function mostrarInputLiberacion(){
 
+
 let modo =
 document.getElementById("modoLiberacion").value;
+
+
 
 let input =
 document.getElementById("numeroLiberacion");
 
-if(modo === "numero"){
+
+
+if(modo=="numero")
 
 input.classList.remove("hidden");
 
-}else{
+
+else
 
 input.classList.add("hidden");
 
-}
 
 }
 
-/* ACTUALIZAR FINALIZACION */
+
+
+
+
+
 
 function actualizarFinalizacion(){
 
+
 let categoria =
 document.getElementById("categoria").value;
+
+
 
 let edificio =
 document.getElementById("edificio");
 
-if(categoria === "edificacion"){
+
+
+if(categoria=="edificacion")
 
 edificio.classList.remove("hidden");
 
-}else{
+
+else
 
 edificio.classList.add("hidden");
 
-}
 
 }
 
-/* GENERAR ETIQUETA */
+
+
+
+
+
+
+
 
 function generar(){
 
+
 let categoria =
 document.getElementById("categoria").value;
+
 
 let zona =
 document.getElementById("zona").value;
 
+
 let tipo =
 document.getElementById("tipo").value;
+
 
 let tarea =
 document.getElementById("tarea").value;
 
+
 let spliter =
 document.getElementById("spliter").value;
+
 
 let tecnico =
 document.getElementById("tecnico").value;
 
-let etiqueta = "";
 
-if(categoria === "campo"){
 
-if(tipo === "MIGRACION"){
+let etiqueta="";
 
-etiqueta =
+
+
+
+if(categoria=="campo"){
+
+
+if(tipo=="MIGRACION")
+
+
+etiqueta=
+
 `${tipo}_${zona}-ZONA-ABIERTA-TAREA_${tarea}:${spliter}-${tecnico}`;
 
-}else{
 
-etiqueta =
+else
+
+
+etiqueta=
+
 `${tipo}_${zona}-ZONA_ABIERTA-TAREA_${tarea}:${spliter}-${tecnico}`;
+
 
 }
 
-}else if(categoria === "edificacion"){
 
-etiqueta =
+
+
+else if(categoria=="edificacion"){
+
+
+etiqueta=
+
 `EDIFICACION_${zona}-${tipo}-TAREA_${tarea}:${spliter}-${tecnico}`;
 
-}else{
+
+}
+
+
+
+
+else{
+
 
 let modo =
 document.getElementById("modoLiberacion").value;
 
-let numeroLiberacion =
-document.getElementById("numeroLiberacion").value;
 
-let parteLiberacion = "";
 
-if(modo === "NA"){
+let lib = modo=="NA"
 
-parteLiberacion = "TAREA_N/A";
+?
 
-}else if(numeroLiberacion !== ""){
+"TAREA_N/A"
 
-parteLiberacion =
-`TAREA_${numeroLiberacion}`;
+:
 
-}else{
+`TAREA_${document.getElementById("numeroLiberacion").value}`;
 
-parteLiberacion = "TAREA_N/A";
 
-}
 
-if(tipo === "MIGRACION"){
+etiqueta=
 
-etiqueta =
-`${tipo}_${zona}-ZONA-ABIERTA-TAREA_${tarea}:${spliter}-${tecnico}-${parteLiberacion}`;
+`${tipo}_${zona}-ZONA_ABIERTA-TAREA_${tarea}:${spliter}-${tecnico}-${lib}`;
 
-}else{
-
-etiqueta =
-`${tipo}_${zona}-ZONA_ABIERTA-TAREA_${tarea}:${spliter}-${tecnico}-${parteLiberacion}`;
 
 }
 
+
+
+document.getElementById("resultado").innerText=etiqueta;
+
+
 }
 
-document.getElementById("resultado").innerText =
-etiqueta;
 
-}
 
-/* GENERAR FINALIZACION */
+
+
+
+
+
 
 function generarFinalizacion(){
+
 
 let categoria =
 document.getElementById("categoria").value;
 
-let spliter =
-document.getElementById("spliter").value;
 
 let caja =
 document.getElementById("caja").value;
 
+
 let edificio =
 document.getElementById("edificio").value;
+
+
+let spliter =
+document.getElementById("spliter").value;
+
 
 let coordenadas =
 document.getElementById("coordenadas").value;
 
-let texto = "";
 
-if(categoria === "edificacion"){
 
-texto =
+
+let texto;
+
+
+
+if(categoria=="edificacion"){
+
+
+texto=
+
 `Se instaló caja: ${caja}, edificio: ${edificio}, splitter: ${spliter}, coordenadas: ${coordenadas}`;
 
-}else{
 
-texto =
+}
+
+else{
+
+
+texto=
+
 `Se instaló caja: ${caja}, edificio: N/A, splitter: ${spliter}, coordenadas: ${coordenadas}`;
 
-}
-
-document.getElementById("finalizacion").innerText =
-texto;
 
 }
 
-/* INICIAR */
+
+
+
+document.getElementById("finalizacion").innerText=texto;
+
+
+}
+
+
+
+
 
 cargarTipos();
 
 actualizarFinalizacion();
 
+
+
 </script>
+
 
 </body>
 </html>
